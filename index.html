@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dog API App</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -13,11 +14,16 @@
     <main>
         <section>
             <form class="js-form" action="">
+                <p>How many nice dogs do you want to see? Please select a number between 1-50: </p>
                 <input type="number" value="3" class="js-user-input" required>
                 <button type="submit">Get Dogs</button>
             </form>
+            <form class = "js-search-form">
+                <p>If you would rather search for a specific breed, please enter it below:</p>
+                <input type="text" placeholder="Please enter a breed here" class ="js-breed-search">
+                <button type="submit">Show me that dog!</button>
+            </form>
             <div class="image-container">
-
             </div>
         </section>
     </main>
