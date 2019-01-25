@@ -39,7 +39,23 @@ function handleSearchDog(){
   $('.js-search-form').on('submit', function(event){
     event.preventDefault();
     const dogBreed = $('.js-breed-search').val();
+    encodeURI(dogBreed);
+    console.log(encodeURI(dogBreed));
+    searchDogImage(dogBreed);
   });
+}
+
+function searchDogImage(input){
+  fetch(`https://dog.ceo/api/breed/${input}/images/random`)
+    .then(response => response.json())
+    .then(data => {
+      if(data.status === 'success'){
+        console.log(data.message);
+        $('.image-container').html(`<img src="${data.message}">`);
+      }else {
+        $('.image-container').html('<p>Unable to find that cute dog. Please try a different breed. </p>');
+      }
+    });
 }
 
 function main(){
